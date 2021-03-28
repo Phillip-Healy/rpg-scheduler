@@ -33,6 +33,10 @@ form {
     margin-left: 20%;
 }
 
+form label {
+    font-size: 22px;
+}
+
 .button {
     padding: 60px 80px;
     border-radius: 8px;
