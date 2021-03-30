@@ -9,29 +9,33 @@
 </head>
 <body>
     <h1>RPG Club!</h1>
-    <form id="frm1" action="/action_page.php">
+    <form id="frm1">
         First name: <input type="text" name="fname" value="Donald"><br>
         Last name: <input type="text" name="lname" value="Duck"><br><br>
+        <h2 id="demo"></h2>
+        <h2 id="verified"></h2>
         <span id="buttonAppear"></span>
     </form> 
-    <h2 id="demo"></h2>
-    <h2 id="verified"></h2>
+    
     <button onclick="myFunction()">Try it</button>
 
     <script>
         function myFunction() {
             var x = document.getElementById("frm1");
-            var text = "";
+            var access = "Welcome Admin";
+            var accessed = access.fontcolor("green");
+            var deny = "ACCESS DENIED!";
+            var denied = deny.fontcolor("red");
             var i;
 
             if (x.elements[0].value == "admin") {
                 if (x.elements[1].value == "secret") {
-                    document.getElementById("verified").innerHTML = "Welcome Admin";
+                    document.getElementById("verified").innerHTML = accessed;
                     buttonFunction();
                 }
             }
             else {
-            document.getElementById("verified").innerHTML = "ACCESS DENIED!";
+            document.getElementById("verified").innerHTML = denied;
             }
         }
 
