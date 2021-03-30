@@ -9,14 +9,35 @@
 </head>
 <body>
     <h1>RPG Club!</h1>
-    <form>
-        <label for = "choice">What would you like to make changes to?</label>
-        <select name = "option" id = "choice">
-            <option value = "master" selected>Dungeon Master</option>
-            <option value = "player">Player</option>
-            <option value = "character">Character</option>
-            <option value = "location">Location</option>
-        </select>
-      </form>
+    <form id="frm1" action="/action_page.php">
+        First name: <input type="text" name="fname" value="Donald"><br>
+        Last name: <input type="text" name="lname" value="Duck"><br><br>
+        <span id="buttonAppear"></span>
+    </form> 
+    <h2 id="demo"></h2>
+    <h2 id="verified"></h2>
+    <button onclick="myFunction()">Try it</button>
+
+    <script>
+        function myFunction() {
+            var x = document.getElementById("frm1");
+            var text = "";
+            var i;
+
+            if (x.elements[0].value == "admin") {
+                if (x.elements[1].value == "secret") {
+                    document.getElementById("verified").innerHTML = "Welcome Admin";
+                    buttonFunction();
+                }
+            }
+            else {
+            document.getElementById("verified").innerHTML = "ACCESS DENIED!";
+            }
+        }
+
+        function buttonFunction(){
+            document.getElementById("buttonAppear").innerHTML = '<button type="submit">Access Graanted!</button>';
+        }
+    </script>
 </body>
 </html>
